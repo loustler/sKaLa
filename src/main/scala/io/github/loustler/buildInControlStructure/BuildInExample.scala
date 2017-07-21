@@ -119,7 +119,7 @@ object BuildInExample {
 
   // A <: B => A is subclass of B
   // A >: B => A is superclass of B
-  def foreachPrintln[A <: IndexedSeqOptimized[_, _]](l: A): Unit = {
+  def foreachPrintln[A](l: Array[A]): Unit = {
     l.foreach(println)
   }
 }

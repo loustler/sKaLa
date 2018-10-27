@@ -5,7 +5,8 @@ name := "sKaLa"
 
 version := "1.1"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.7" // latest scala stable version at 10/27/2018
+sbtVersion := "1.2.6" // latest sbt version at 10/27/2018
 
 prefixScala := "scala"
 groupOfScalaLang := s"org.${prefixScala.value}-lang"

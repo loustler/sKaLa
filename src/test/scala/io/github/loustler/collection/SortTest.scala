@@ -122,7 +122,7 @@ class SortTest extends BaseTest {
     * 0 :: List(1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 15, 17)
     *
     * // Completed sort
-    * List(0, (1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 15, 17)
+    * List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 15, 17)
     */
   "Sort" should "success by merge" in {
     val maxValue:        Int       = 17

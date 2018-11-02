@@ -1,5 +1,6 @@
 package io.github.loustler.traitt
 
+import io.github.loustler.BaseTest
 import io.github.loustler.traitt.mixin.{
   BasicIntQueue,
   DecrementIntQueue,
@@ -9,13 +10,12 @@ import io.github.loustler.traitt.mixin.{
   IncrementIntQueue,
   Incrementing
 }
-import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * @author loustler
   * @since 09/04/2018
   */
-class MixinTest extends FlatSpec with Matchers {
+class MixinTest extends BaseTest {
   "Queue Mixin" should "be DoublingQueue" in {
     val queue: DoublingIntQueue = new DoublingIntQueue()
 
@@ -134,12 +134,8 @@ class MixinTest extends FlatSpec with Matchers {
   }
 
   it should "incrementing with doubling with filtering with decrementing" in {
-    val queue: BasicIntQueue
-      with Incrementing
-      with Doubling
-      with Filtering
-      with DecrementIntQueue = new BasicIntQueue() with Incrementing
-    with Doubling with Filtering with DecrementIntQueue
+    val queue: BasicIntQueue with Incrementing with Doubling with Filtering with DecrementIntQueue = new BasicIntQueue()
+    with Incrementing with Doubling with Filtering with DecrementIntQueue
 
     queue.put(1)
     queue.put(0)

@@ -7,7 +7,7 @@ package io.github.loustler.collection
 object ListWrapper {
   def prepend[A](list: List[A], x: A): List[A] = x :: list
 
-  def prepend[A](list: List[A], x: A*): List[A] = x.foldLeft(list)(prepend)
+  def prepend[A](list: List[A], x: A*): List[A] = x.foldLeft(list)((ls, e) => e :: ls)
 
   def append[A](list: List[A], x: A): List[A] = list :+ x
 

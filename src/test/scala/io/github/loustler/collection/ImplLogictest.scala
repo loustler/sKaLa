@@ -66,4 +66,14 @@ class ImplLogictest extends BaseTest {
     result should not be empty
     result should contain allElementsOf expectedList
   }
+
+  it should "be able to create map from two list" in {
+    val keys:   List[String] = List("CP", "LeBRON", "KD", "Kyrie")
+    val values: List[Int]    = List(3, 23, 35, 11)
+
+    val nba: Map[String, Int] = ImplLogic.toMap(keys, values)
+
+    nba should not be empty
+    nba should have size 4
+  }
 }

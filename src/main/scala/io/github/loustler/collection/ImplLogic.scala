@@ -1,5 +1,6 @@
 package io.github.loustler.collection
 
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 /**
@@ -26,4 +27,14 @@ object ImplLogic {
 
   def reverseRight[A](x: List[A]): List[A] =
     (x :\ List[A]())((e, ls) => e :: ls)
+
+  // It seems like toMap in Tuple2
+  def toMap[A, B](keys: List[A], values: List[B]): Map[A, B] = {
+    val builder: mutable.Builder[(A, B), Map[A, B]] = Map.newBuilder[A, B]
+
+    for (tuple <- keys zip values)
+      builder += tuple
+
+    builder.result()
+  }
 }

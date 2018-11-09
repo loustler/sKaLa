@@ -14,4 +14,16 @@ object ImplLogic {
 
     (l.toList, r.toList)
   }
+
+  def flattenLeft[A](x: List[List[A]]): List[A] =
+    (List[A]() /: x)(_ ::: _)
+
+  def flattenRight[A](x: List[List[A]]): List[A] =
+    (x :\ List[A]())(_ ::: _)
+
+  def reverseLeft[A](x: List[A]): List[A] =
+    (List[A]() /: x)((ls, e) => e :: ls)
+
+  def reverseRight[A](x: List[A]): List[A] =
+    (x :\ List[A]())((e, ls) => e :: ls)
 }
